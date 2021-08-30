@@ -355,13 +355,19 @@ footer{
     } */
 
     header{
-        height: 75vh;
+        background-image:
+        linear-gradient(black, black),
+        url(img/main_background_responsive.jpg);
+        background-size:cover;
+        background-blend-mode: saturation;
+        height: 100vh;
+        padding-top: 15px;
     }
 
     /* HEADER */
     .main_nav{
         flex-wrap: wrap;
-        text-align: center;
+        /* text-align: center; */
         margin-top: 10px;
     }
     .main_nav li{
@@ -371,11 +377,11 @@ footer{
         margin-top: 100px;
     }
     .titulo_container h1{
-        font-size: 45px;
+        font-size: 65px;
         padding: 15px;
     }
     .titulo_container p{
-        font-size: 12px;
+        font-size: 17px;
     }
     #sct-horarios h4{
         font-size: 29px;
@@ -451,7 +457,13 @@ footer{
         background-color:brown;
     } */
     header{
-        height: 80vh;
+        background-image:
+        linear-gradient(black, black),
+        url(img/main_background_responsive.jpg);
+        background-size:cover;
+        background-blend-mode: saturation;
+        height: 100vh;
+        padding-top: 15px;
     }
 
     /* HEADER */
@@ -467,11 +479,11 @@ footer{
         margin-top: 100px;
     }
     .titulo_container h1{
-        font-size: 45px;
+        font-size: 76px;
         padding: 15px;
     }
     .titulo_container p{
-        font-size: 12px;
+        font-size: 20px;
     }
     #sct-horarios h4{
         font-size: 29px;
@@ -547,7 +559,13 @@ footer{
         background-color:black;
     } */
     header{
-        height: 80vh;
+        background-image:
+        linear-gradient(black, black),
+        url(img/main_background_responsive.jpg);
+        background-size:cover;
+        background-blend-mode: saturation;
+        height: 100vh;
+        padding-top: 15px;
     }
 
     /* HEADER */
@@ -563,11 +581,11 @@ footer{
         margin-top: 200px;
     }
     .titulo_container h1{
-        font-size: 90px;
+        font-size: 155px;
         padding: 15px;
     }
     .titulo_container p{
-        font-size: 24px;
+        font-size: 40px;
     }
     #sct-horarios h4{
         font-size: 29px;
@@ -641,17 +659,14 @@ footer{
     }
 }
 
-/* ULTRA PEQUEÑO RESPONSIVE */
+/* ULTRA PEQUEÑO RESPONSIVE
 @media only screen and (max-width: 386px) {
 
-    /* *{
-        background-color: pink;
-    } */
     header{
         height: 75vh;
     }
 
-    /* HEADER */
+    //HEADER
     .main_nav{
         flex-wrap: wrap;
         text-align: center;
@@ -712,7 +727,7 @@ footer{
         width: 90%;
     }
 
-    /* NOSOTROS */
+    //NOSOTROS
     #sct-nosotros{
         padding: 0;
     }
@@ -751,4 +766,4 @@ footer{
     #sct-contacto h3 {
         font-size: 30px;
     }
-}
+} */
