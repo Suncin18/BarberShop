@@ -199,3 +199,46 @@ const typed2 = new Typed('.typed2', {
     // loop: true,
     // loopCount: 2
 });
+
+// SCROLL ANIMATION
+let aparecerScroll = document.querySelectorAll('.animarScroll');
+
+//Esta es para los sliders
+let animarSlideSide = document.querySelectorAll('.animarSlide');
+
+const animacionAparecer = ()=>{
+
+    // Con scrollTop calculamos el scroll actual de la página
+    let scrollActual = document.documentElement.scrollTop;
+    for(let i = 0; i<aparecerScroll.length; i++){
+
+        // Tenemos que calcular el scroll del elemento, eso lo hacemos con offsetTop
+        let scrollElementoAparecer = aparecerScroll[i].offsetTop;
+        if((scrollElementoAparecer - (scrollElementoAparecer / 4)) < scrollActual){
+            aparecerScroll[i].style.opacity = 1;
+
+            if(i==2){
+                animarSlideSide[1].classList.add('slideRight');
+                animarSlideSide[0].classList.add('slideLeft');
+            }
+            // animarSlideSide[0].classList.add('slideRight');
+            // animarSlideSide[1].classList.add('slideLeft');
+        }
+    }
+
+    // for(let i = 0; i<animarSlideSide.length; i++){
+
+        //Con scrollTop calculamos el scroll actual de la página para los sliders
+        // let scrollActualSlide = animarSlideSide[i].offsetTop;
+
+        //Esto podría ser más dinámico, pero es mi primer vez utilizandolo, lo dejaré estático, entiendo la lógica
+        // if((scrollActualSlide - (scrollActualSlide / 4)) < scrollActual){
+
+            //animarSlide
+    //         animarSlideSide[0].classList.add('slideRight');
+    //         animarSlideSide[1].classList.add('slideLeft');
+    //     }
+    // }
+};
+
+window.addEventListener('scroll', animacionAparecer);
