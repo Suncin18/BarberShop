@@ -242,3 +242,37 @@ const animacionAparecer = ()=>{
 };
 
 window.addEventListener('scroll', animacionAparecer);
+
+// MENÚ RESPONSIVE
+const btnMenuResponsive = document.getElementById('btn-menu-responsive');
+const menu = document.querySelector('.main_nav');
+// btnMenuResponsive.addEventListener('click', ()=>{
+//     console.log('detectado');
+//     const menu = document.querySelector('.main_nav');
+//     menu.classList.toggle('mostrarMenu');
+
+//     console.log(Event.target);
+//     let target = e.target || e.srcElement;
+//     if(target){
+//         console.log('Dentro del botón');
+//     }else{
+//         console.log('fuera del botón');
+//     }
+// });
+
+document.addEventListener('click', (e)=>{
+    if(e.target.closest('#btn-menu-responsive')){
+        menu.classList.toggle('mostrarMenu');
+        // menu.style.transform = 'translateX(460px)';
+        if(menu.classList.contains('mostrarMenu')){
+            btnMenuResponsive.style.backgroundColor = '#000';
+            // menu.classList.remove('hideRight');
+        }else{
+            // menu.classList.add('hideRight');
+            btnMenuResponsive.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';    
+        }
+    }else{
+        menu.classList.remove('mostrarMenu');
+        btnMenuResponsive.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    }
+});
