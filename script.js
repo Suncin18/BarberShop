@@ -1,16 +1,3 @@
-/*
-    <img src="img/sucursal_sabanilla.jpg" alt="sucursal">
-    <div class="sucursales_detalles">
-        <h2>Sabanilla</h2>
-        <h3>Cada peluquero tiene su propio estilo y eso es lo que hace de la peluquería una forma de arte.</h3>
-        <h4><i class="fas fa-phone-square"></i> 2351-2782</h4>
-        <h4><i class="fas fa-envelope"></i> reservas@hena.com</h4>
-        <h4><i class="fas fa-map-marker-alt"></i> 400m Norte del KFC de Sabanilla</h4>
-        <h4><i class="fab fa-facebook-square"></i> Hena Sabanilla</h4>
-        <h4><i class="fab fa-instagram-square"></i> HenaSabanilla</h4>
-    </div>
-*/
-
 const sabanilla = document.getElementById('sabanila');
 const sanPedro = document.getElementById('san-pedro');
 const coronado = document.getElementById('coronado');
@@ -112,10 +99,6 @@ const crearLocales = ()=>{
                 break;
         }
     });
-    // switch(sltResponsive.value){
-    //     default:
-    //         break;
-    // }
 
     // Por defecto quiero que se ponga la info de Sabanilla
     ubicacionh2.innerText = 'Sabanilla';
@@ -186,8 +169,6 @@ const typed = new Typed('.typed', {
     typeSpeed: 250,
     startDelay: 1000,
     backDelay: 1000
-    // loop: false
-    // loopCount: 2
 });
 const typed2 = new Typed('.typed2', {
     strings: ['Cuidar de sí mismo no es un gasto es una inversión.'],
@@ -196,8 +177,6 @@ const typed2 = new Typed('.typed2', {
     typeSpeed: 60,
     startDelay: 1000,
     backDelay: 1000
-    // loop: true,
-    // loopCount: 2
 });
 
 // SCROLL ANIMATION
@@ -221,24 +200,8 @@ const animacionAparecer = ()=>{
                 animarSlideSide[1].classList.add('slideRight');
                 animarSlideSide[0].classList.add('slideLeft');
             }
-            // animarSlideSide[0].classList.add('slideRight');
-            // animarSlideSide[1].classList.add('slideLeft');
         }
     }
-
-    // for(let i = 0; i<animarSlideSide.length; i++){
-
-        //Con scrollTop calculamos el scroll actual de la página para los sliders
-        // let scrollActualSlide = animarSlideSide[i].offsetTop;
-
-        //Esto podría ser más dinámico, pero es mi primer vez utilizandolo, lo dejaré estático, entiendo la lógica
-        // if((scrollActualSlide - (scrollActualSlide / 4)) < scrollActual){
-
-            //animarSlide
-    //         animarSlideSide[0].classList.add('slideRight');
-    //         animarSlideSide[1].classList.add('slideLeft');
-    //     }
-    // }
 };
 
 window.addEventListener('scroll', animacionAparecer);
@@ -246,33 +209,53 @@ window.addEventListener('scroll', animacionAparecer);
 // MENÚ RESPONSIVE
 const btnMenuResponsive = document.getElementById('btn-menu-responsive');
 const menu = document.querySelector('.main_nav');
-// btnMenuResponsive.addEventListener('click', ()=>{
-//     console.log('detectado');
-//     const menu = document.querySelector('.main_nav');
-//     menu.classList.toggle('mostrarMenu');
-
-//     console.log(Event.target);
-//     let target = e.target || e.srcElement;
-//     if(target){
-//         console.log('Dentro del botón');
-//     }else{
-//         console.log('fuera del botón');
-//     }
-// });
 
 document.addEventListener('click', (e)=>{
     if(e.target.closest('#btn-menu-responsive')){
         menu.classList.toggle('mostrarMenu');
-        // menu.style.transform = 'translateX(460px)';
+        
         if(menu.classList.contains('mostrarMenu')){
             btnMenuResponsive.style.backgroundColor = '#000';
-            // menu.classList.remove('hideRight');
+
         }else{
-            // menu.classList.add('hideRight');
+            
             btnMenuResponsive.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';    
         }
     }else{
         menu.classList.remove('mostrarMenu');
         btnMenuResponsive.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    }
+});
+
+// Validación básica de formulario
+const nombreForm = document.getElementById('nombre');
+const correoForm = document.getElementById('correo');
+const mensajeForm = document.getElementById('form-mensaje');
+const btnForm = document.getElementById('btn-form');
+
+let correoExpression = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
+btnForm.addEventListener('click', ()=>{
+    if(nombreForm.value == '' || correoForm.value == '' || mensajeForm.value == ''){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No puedes dejar campos en blanco',
+        })
+    }else if(!correoExpression.test(correoForm.value)){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El formato del correo no es válido',
+        })
+    }else{
+        Swal.fire(
+            'Mensaje enviado!',
+            'Nos pondremos en contacto pronto!',
+            'success'
+        )
+        nombreForm.value = '';
+        correoForm.value = '';
+        mensajeForm.value = '';
     }
 });

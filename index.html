@@ -132,11 +132,11 @@
         <h3>CONTACTO</h3>
         <form class="form">
             <div class="form_superior">
-                <input type="text" placeholder="NOMBRE">
-                <input type="email" placeholder="CORREO ELECTRÓNICO">
+                <input type="text" placeholder="NOMBRE" id="nombre">
+                <input type="email" placeholder="CORREO ELECTRÓNICO" id="correo">
             </div>
-            <textarea name="" id="" cols="30" rows="8" placeholder="¿CÓMO PODEMOS AYUDARTE?"></textarea>
-            <button>ENVIAR</button>
+            <textarea name="" id="form-mensaje" cols="30" rows="8" placeholder="¿CÓMO PODEMOS AYUDARTE?"></textarea>
+            <button id="btn-form" type="button">ENVIAR</button>
         </form>
     </section>
     <footer>
@@ -147,6 +147,9 @@
 
     <!-- Para el efecto de máquina de escribir -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 </body>
 </html>
